@@ -3,9 +3,34 @@
 <header class="jumbotron">
     <div class="container">
         <div class="row">
-            <h1>{{.User.Name}}</h1>
+            <h1>ユーザー 一覧</h1>
         </div>
     </div>
 </header>
+
+<body>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>ユーザー名</th>
+                <th>編集</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{range .Users}}
+            <tr>
+                <td>{{.ID}}</td>
+                <td>{{.Name}}</td>
+                <td>
+                    <a href="http://localhost:8080/detail?id={{.ID}}" class="btn btn-warning" style="width: 100px;">
+                    編集<span class="glyphicon glyphicon-erase" style="margin-left: 5px;"></span>
+                    </a>
+                </td>
+            </tr>
+            {{end}}
+        </tbody>
+    </table>
+</body>
 
 {{template "footer.html" .}}

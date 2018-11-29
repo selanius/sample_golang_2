@@ -41,7 +41,10 @@ func InitDB() {
 	_, err = db.Exec(`INSERT INTO users 
 		(name)
 		VALUES
-		('John F Kenned')
+		('George Washington'),
+		('John Adams'),
+		('Thomas Jefferson'),
+		('James Madison')
 	`)
 	if err != nil {
 		outputErrorLog("データ投入 失敗", err)

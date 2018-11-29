@@ -1,0 +1,35 @@
+{{template "header.html" .}}
+
+<header class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <h1>ユーザー編集</h1>
+        </div>
+    </div>
+</header>
+
+<body>
+    <div class="container">
+        <form class="form-horizontal" method="post" action="http://localhost:8080/edit">
+            <div class="form-group">
+                <label class="col-lg-1 control-label">お名前</label>
+                <div class="col-lg-4">
+                    <input type="text" name="name" value="{{.User.Name}}" class="form-control">
+                </div>
+                <div class="col-lg-4">
+                    <input type="hidden" name="id" value="{{.User.ID}}">
+                    <button type="submit" class="btn btn-lg btn-primary">
+                        更新
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="container">
+        <a href="http://localhost:8080/home" class="btn btn-warning" style="width: 100px;">
+            戻る<span style="margin-left: 5px;"></span>
+        </a>
+    </div>
+</body>
+
+{{template "footer.html" .}}
